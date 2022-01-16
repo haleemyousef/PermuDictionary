@@ -2,7 +2,7 @@
 <h4>Find out what other meaningful words your name (or whatever word) can make.</h4>
 
 # Introduction:
-permudictionary is a tool that finds out all the possible permutations of an input word and prints out the meaning of words found in the dictionary, presenting them in a delicate manner.
+PermuDictionary is a tool that finds out all the possible permutations of an input word and prints out the meaning of words found in the dictionary, presenting them in a delicate manner.
 
 # Features:
 <ul>
