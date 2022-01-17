@@ -32,10 +32,11 @@ try:
 except ModuleNotFoundError:
 	print("Installing PyEnchant:\n")
 	subprocess.run([sys.executable, "-m", "pip", "install", "Pyenchant"])
-	import enchant
 except Exception:
 	print("some weird error has happened while importing a module...")
 	raise Exception()
+finally:
+	import enchant
 
 #Installing/Importing PyDictionary
 try:
@@ -43,20 +44,21 @@ try:
 except ModuleNotFoundError:
 	print("Installing PyDictionary:\n")
 	subprocess.run([sys.executable, "-m", "pip", "install", "PyDictionary"])
-	from PyDictionary import PyDictionary
 except Exception:
 	print("some weird error has happened while importing a module...")
 	raise Exception()
+finally:
+	from PyDictionary import PyDictionary
 
 
-word = input("Enter a word to discover all its possible permutations: ").lower() # I recommend 7 or less letters for most stability.
+word = input("\nEnter a word to discover all its possible permutations: ").lower() # I recommend 7 or less letters for most stability.
 word = word.replace(' ', '') # No whitespaces.
 output = input("Do you wish to output this program to a text file? (Y/n): ").lower()
 if output == 'y':
 	file_name = "output_" + word + ".txt"
 	print("Generating permutations... Data will be saved on", file_name)
 	file = open(file_name, "wt")
-	file.write(logo) # Comment this line if you don't want to have the logo in the output file.
+	file.write(logo) # Comment this line if you wish not to have my logo in the output file.
 	sys.stdout = file
 # word.split()
 d = enchant.Dict("en") # enchant for looping and filtering through words FAST.
@@ -80,7 +82,6 @@ The length of the words generated now is {i}.
 			continue
 
 		get_meaning = ''
-		
 		if d.check(perm):
 			get_meaning = dictionary.meaning(perm, disable_errors=True) # Errors in this case are useless and visually unappealing.
 			is_it_a_word = "YES"
@@ -89,7 +90,7 @@ The length of the words generated now is {i}.
 		print(f"{perm} | is it a word? {is_it_a_word}.")
 		
 		if get_meaning is None: # enchant & PyDictionary libraries are not identical, sometimes a word exist in the first but not the latter.
-			print("  \u2022Nothing was found on PyDictionary ):")
+			print("  \u2022Nothing was found on PyDictionary ):") # \u2022 is the unicode shortcut for a bullet point.
 		elif get_meaning != '':
 			for k, v_list in get_meaning.items():
 				print(f"  \u2022{k}s:") # Printing the keys of the dictionary as headilnes (Noun, Verb, Adjective, Adverb, etc).
