@@ -33,7 +33,7 @@ except ModuleNotFoundError:
 	print("Installing PyEnchant:\n")
 	subprocess.run([sys.executable, "-m", "pip", "install", "Pyenchant"])
 except Exception:
-	print("some weird error has happened while importing a module...")
+	print("some weird error occured while importing Pyenchant module...")
 	raise Exception()
 finally:
 	import enchant
@@ -45,7 +45,7 @@ except ModuleNotFoundError:
 	print("Installing PyDictionary:\n")
 	subprocess.run([sys.executable, "-m", "pip", "install", "PyDictionary"])
 except Exception:
-	print("some weird error has happened while importing a module...")
+	print("some weird error occured while importing PyDictionary module...")
 	raise Exception()
 finally:
 	from PyDictionary import PyDictionary
