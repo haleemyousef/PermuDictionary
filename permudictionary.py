@@ -58,7 +58,7 @@ if output == 'y':
 	file = open(file_name, "wt")
 	file.write(logo) # Comment this line if you don't want to have the logo in the output file.
 	sys.stdout = file
-word.split()
+# word.split()
 d = enchant.Dict("en") # enchant for looping and filtering through words FAST.
 dictionary = PyDictionary() # PyDictionary to fetch meaning from words filtered by enchant.
 no_duplicates = set()
