@@ -1,4 +1,4 @@
-# Description:
+# PermuDictionary
 <h4>Find out what other meaningful words your name (or whatever word) can make.</h4>
 
 # Introduction:
