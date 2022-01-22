@@ -1,10 +1,9 @@
 # PermuDictionary
 <h4>Find out what other meaningful words your name (or whatever word) can make.</h4>
+ 
+PermuDictionary is a python tool that finds out all the possible permutations of an input word and prints out the meaning of words found in the dictionary, presenting them in an elegant manner.
 
-# Introduction:
-PermuDictionary is a tool that finds out all the possible permutations of an input word and prints out the meaning of words found in the dictionary, presenting them in a delicate manner.
-
-# Features:
+## Features:
 <ul>
 <li><b>Speed</b>: Pyenchant is used first to filter out the words with meaning, then PyDictionary to fetch meaning.</li>
 <li><b>Uniqueness</b>: no duplicates are allowed.</li>
@@ -12,9 +11,9 @@ PermuDictionary is a tool that finds out all the possible permutations of an inp
 <li><b>output options</b>: you can choose your output to be on the console or a .txt file.</li>
 </ul>
  
-# Contacts:
+## Contacts:
 <ul>
 <li><b>Author </b>: Haleem Yousef </li>
-<li><b>Email  </b>: haleemyousef01@gmail.com </li>
+<li><b>Email &nbsp; &nbsp;</b>: haleemyousef01@gmail.com </li>
 <li><b>GitHub </b>: https://github.com/haleemyousef </li>
 </ul>
