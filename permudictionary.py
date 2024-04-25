@@ -53,6 +53,8 @@ finally:
 
 word = input("\nEnter a word to discover all its possible permutations: ").lower() # I recommend 7 or less letters for most stability.
 word = word.replace(' ', '') # No whitespaces.
+with_definition = input("Would you like to include definitions from the dictionary? (Y/n): ").lower()
+# word = True if word == "y" else False
 output = input("Do you wish to output this program to a text file? (Y/n): ").lower()
 if output == 'y':
 	file_name = "output_" + word + ".txt"
@@ -83,7 +85,8 @@ The length of the words generated now is {i}.
 
 		get_meaning = ''
 		if d.check(perm):
-			get_meaning = dictionary.meaning(perm, disable_errors=True) # Errors in this case are useless and visually unappealing.
+			if with_definition == "y":
+				get_meaning = dictionary.meaning(perm, disable_errors=True) # Errors in this case are useless and visually unappealing.
 			is_it_a_word = "YES"
 		else:
 			is_it_a_word = "NO"
@@ -96,8 +99,9 @@ The length of the words generated now is {i}.
 				print(f"  \u2022{k}s:") # Printing the keys of the dictionary as headilnes (Noun, Verb, Adjective, Adverb, etc).
 				for v in v_list:
 					v = v.replace(";", ";\n\t") # Sometimes a definition can be lengthy and seperated by semicolons, I made those multilinear.
-					print(f"     -{v}.") # Finally, the godd*amn defintion.
+					print(f"\t-{v}.") # Finally, the godd*amn defintion.
 	i += 1
 
 if output == 'y':
 	file.close()
+
